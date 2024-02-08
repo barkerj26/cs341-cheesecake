@@ -1,3 +1,7 @@
+/*
+ *	Made by Jaden Barker for CS-341
+ */
+
 var fs = require('fs');
 
 test('test selectEvent', () => {
