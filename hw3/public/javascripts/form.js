@@ -12,9 +12,19 @@ submitHandler = function(event) {
 	}
 }
 
+// handles the data received from the POST send upon changing the stats month
+monthReceiver = function(data) {
+	var i = 0;
+	$("#monthstats").children().each(function() {
+		$(this).text(data[i].quantity + " " + data[i].topping);
+		i++;
+	});
+}
+
 // handles selecting month for cheesecake order stats
 monthHandler = function(event) {
 	$("#month").text($(this).text());
+	$.post("orders", monthReceiver);
 }
 
 // apply handlers to appropriate buttons
